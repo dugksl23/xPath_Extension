@@ -1,10 +1,41 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html>
 <meta charset="UTF-8">
-<head><title>sending xpath test</title></head><body>
-<form>
-  <input id="xpath" type="text">
-  <input id="submit" type="submit" value="send">
-</form>
-<script src="assets/dialog.js"></script>
+<head>
+    <title>sending xpath test</title>
+</head>
+<style>
+    .container {
+        margin: 0 auto;
+        border: 1px solid black;
+        width: 450px;
+        height: 500px;
+    }
+    .inputXpath{
+        width: 380px;
+    }
 
-</body></html>
+
+</style>
+<body>
+
+<div class="container">
+    <div class="row" style="height:30px;"></div>
+
+    <div class="row xPathList" style="height:400px;">
+        <div class="col-md-8">
+            <input class="inputXpath" id="xpath" type="text">
+            <input type="button" class="cancel_btn"  value="cancel">
+        </div>
+    </div>
+    <div class="row footer" style="height:30px;">
+        <div class="col-md-12" style="text-align:right; padding-right: 10px;">
+            <input id="send_btn" type="submit" value="send">
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="assets/dialog.js"></script>
+</html>
+

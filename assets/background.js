@@ -1,32 +1,35 @@
-chrome.runtime.onMessage.addListener(function (res) {
+let xPathList = [];
+let popupWindow;
+
+chrome.runtime.onMessage.addListener((res) => {
     if (res.key === 'popup') {
 
-        chrome.tabs.create({
-            url: chrome.extension.getURL('dialog.html'),
-            active: true
-        }, function (tab) {
-
-            // After the tab has been created, open a window to inject the tab
-            chrome.windows.create({
-                tabId: tab.id,
-                type: 'popup',
-                focused: true,
-                width: 500,
-                height: 700,
-                // incognito, top, left, ...
-            });
-
-            chrome.storage.sync.set({xpath: res.data}, function () {
-                console.log('Value is set to ' + value);
-            });
-
+        // 새창을 유지시키기 위한 로직.
+        chrome.windows.getAll({populate: true}, function (e) {
+            if (e.length < 2) {
+                chrome.tabs.create({
+                    url: chrome.extension.getURL('dialog.html'),
+                    active: true
+                }, function (tab) {
+                    popupWindow = tab.id;
+                    // After the tab has been created, open a window to inject the tab
+                    //chrome.tabs.create 로 새창.
+                    //chrome.extension.getURL로 html창을 load.
+                    chrome.windows.create({
+                        tabId: tab.id,
+                        type: 'popup',
+                        focused: true,
+                        width: 500,
+                        height: 700,
+                        // incognito, top, left, ...
+                    });
+                });
+            }
         });
-        //chrome.tabs.create 로 새창을 연다 .
-        //chrome.extension.getURL 로 내가 만들어 둔 html창을 띄워준다.
-        //active는 false
-    } else {
-        chrome.tabs.executeScript({
-            file:'assets/getXpathElement.js'
+
+        xPathList.push(res.data);
+        chrome.storage.sync.set({xPathList: xPathList}, (e) => {
+
         });
     }
 });
@@ -40,5 +43,8 @@ function loadScript() {
     head.appendChild(script);
     someFunctionFromMySuperScript();
 }
+
+
+
 
 
