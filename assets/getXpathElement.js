@@ -1,12 +1,26 @@
-let html = document.querySelector('body');
+let html;
 let xPathForMouseOver;
 let backgroundColor;
+
+
+try {
+    html = document.querySelector('body');
+} catch (e) {
+    console.log(e);
+    console.log(e.error);
+    console.log(e.errorDetail);
+}
 
 html.addEventListener('mouseover', function (event) {
     event.target.style.zIndex = 100;
     let xPath = getElementByXpath(getXPathOfElement(event.target));
     xPathForMouseOver = xPath;
-    backgroundColor = xPath.style.backgroundColor;
+
+    try {
+        backgroundColor = xPath.style.backgroundColor;
+    } catch (e) {
+        console.log(e.error);
+    }
     getFocusElement(xPath);
 })
 
@@ -26,8 +40,10 @@ function getXpath(event) {
     event.target.style.zIndex = 100;
     console.log("targetNode : ", event.target.tagName);
     console.log("xpath : ", getXPathOfElement(event.target));
+    console.log("xpath text :", getElementByXpath(getXPathOfElement(event.target)).innerText);
+    let data = [getXPathOfElement(event.target), getElementByXpath(getXPathOfElement(event.target)).innerText]
 
-    chrome.runtime.sendMessage({key: 'popup', data: getXPathOfElement(event.target)});
+    chrome.runtime.sendMessage({key: 'popup', data: data});
 
 }
 

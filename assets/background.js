@@ -27,8 +27,7 @@ chrome.runtime.onMessage.addListener((res) => {
             }
         });
 
-        xPathList.push(res.data);
-        chrome.storage.sync.set({xPathList: xPathList}, (e) => {
+        chrome.storage.sync.set({xPath: res.data[0], title: res.data[1]}, (e) => {
 
         });
     }

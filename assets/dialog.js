@@ -1,8 +1,10 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    chrome.storage.sync.get('xPathList', (e) => {
+    chrome.storage.sync.get(['xPath','title'], (e) => {
         try {
-            document.querySelector('#xpath').value = encodeURI(e.xPathList);
+            document.querySelector('.xPath').value = encodeURI(e.xPath);
+            document.querySelector('.title').value = encodeURI(e.title);
+
         } catch (err) {
             console.log("비동기 실패");
         }
