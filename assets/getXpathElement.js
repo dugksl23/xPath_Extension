@@ -26,7 +26,12 @@ html.addEventListener('mouseover', function (event) {
 
 
 html.addEventListener('mouseout', function (event) {
-    getBackgroundColorOfElement(xPathForMouseOver, backgroundColor);
+    try{
+        getBackgroundColorOfElement(xPathForMouseOver, backgroundColor);
+    } catch (e) {
+        console.log('배경색이 없습니다.');
+    }
+
 })
 
 html.addEventListener('click', function (event) {
