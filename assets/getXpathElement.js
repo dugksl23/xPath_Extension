@@ -26,7 +26,7 @@ html.addEventListener('mouseover', function (event) {
 
 
 html.addEventListener('mouseout', function (event) {
-    try{
+    try {
         getBackgroundColorOfElement(xPathForMouseOver, backgroundColor);
     } catch (e) {
         console.log('배경색이 없습니다.');
@@ -34,7 +34,7 @@ html.addEventListener('mouseout', function (event) {
 
 })
 
-html.addEventListener('click', function (event) {
+html.addEventListener('click', (event) => {
     getXpath(event);
 })
 html.addEventListener('dblclick', function (event) {
@@ -42,13 +42,14 @@ html.addEventListener('dblclick', function (event) {
 })
 
 function getXpath(event) {
+
     event.target.style.zIndex = 100;
     console.log("targetNode : ", event.target.tagName);
     console.log("xpath : ", getXPathOfElement(event.target));
     console.log("xpath text :", getElementByXpath(getXPathOfElement(event.target)).innerText);
     let data = [getXPathOfElement(event.target), getElementByXpath(getXPathOfElement(event.target)).innerText]
 
-    chrome.runtime.sendMessage({key: 'popup', data: data});
+    chrome.runtime.sendMessage({key: 'xPath', data: data}, response => {});
 
 }
 
@@ -76,7 +77,11 @@ function getElementByXpath(path) {
 }
 
 function getFocusElement(xPath) {
-    xPath.style.backgroundColor = '#FFFAF0';
+    try {
+        xPath.style.backgroundColor = '#FFFAF0';
+    } catch (e) {
+        console.log("배경색이 없습니다.");
+    }
 }
 
 function getBackgroundColorOfElement(xPath, color) {
