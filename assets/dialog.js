@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
             let clickedDetailsList = document.querySelector('.clickedDetailsList');
 
             if (clickedDetailsList.hasChildNodes()) {
-                alert('와요?');
                 let formSubmit = document.querySelector('.formSubmit');
                 formSubmit.submit();
             } else {
