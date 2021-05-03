@@ -31,6 +31,8 @@ function setValueOfTitleAndXpath(xPath, title) {
 
         let inputTagForXpath = document.createElement('input');
         inputTagForXpath.setAttribute('class', 'xPath');
+        inputTagForXpath.setAttribute('name', `xPathList[${i - 1}].xPath`);
+
         inputTagForXpath.value = xPath;
 
         let cancel_btn = document.createElement('input');
@@ -41,12 +43,17 @@ function setValueOfTitleAndXpath(xPath, title) {
         clickedDetailBox.appendChild(inputTagForTitle);
         clickedDetailBox.appendChild(inputTagForXpath);
         clickedDetailBox.appendChild(cancel_btn);
+
     }
     clickedDetailsList.append(clickedDetailBox);
 
-
+    let cancel_buttons = childWindow.document.querySelectorAll(".clickedDetailBox_cancel_btn");
+    for (const button of cancel_buttons) {
+        button.addEventListener('click', (event) => {
+            event.target.closest('div.clickedDetailBox').remove();
+        })
+    }
 }
-
 
 
 // 새창을 유지시키기 위한 로직.

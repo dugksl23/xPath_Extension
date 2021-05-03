@@ -15,6 +15,10 @@ document.querySelector('#stop').addEventListener('click', (e) => {
 function executeScript() {
     chrome.tabs.executeScript({
         code: `document.onclick = (e) => {
+                    if (e.target === 'a') {
+                        e.preventDefalut();
+                    }
+                    
                     return false;
                 }`
     });

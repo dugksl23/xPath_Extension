@@ -1,35 +1,34 @@
 window.addEventListener('DOMContentLoaded', () => {
 
+        let send_btn = document.querySelector('.footer_send_btn').addEventListener('click', e => {
+            let clickedDetailsList = document.querySelector('.clickedDetailsList');
 
-        let cancel_buttons = document.querySelectorAll(".clickedDetailBox_cancel_btn");
-        for (const button of cancel_buttons) {
-            button.addEventListener('click', function (event) {
-                event.target.closest('div.clickedDetailBox').remove();
+            if (clickedDetailsList.hasChildNodes()) {
+                alert('와요?');
+                let formSubmit = document.querySelector('.formSubmit');
+                formSubmit.submit();
+            } else {
+                return false;
+            }
+        });
 
-            })
-        }
-
-        try {
-            document.querySelector('.footer_send_btn').addEventListener('click', () => {
-                let xPath = document.querySelector('.xPath').value;
-                location.href = 'http://localhost:8080/insertXpath?xpath=' + xPath;
-
-                console.log(err);
-                console.log("실패");
-            });
-
-        } catch (err) {
-
-        }
-
-
-        document.querySelector('.footer_cancel_btn').addEventListener('click', (e) => {
-            window.opener.location.reload();
+        let cancel_btn = document.querySelector('.footer_cancel_btn').addEventListener('click', (e) => {
+            //opener.parent.location.reload();
             window.close();
+        })
 
+
+        let reset_btn = document.querySelector('.footer_reset_btn').addEventListener('click', e => {
+            let clickedDetailsList = document.querySelector('.clickedDetailsList');
+
+            while (clickedDetailsList.hasChildNodes()) {
+                clickedDetailsList.removeChild(clickedDetailsList.firstChild);
+            }
         })
     }
 );
+
+
 
 
 // ==> dom 생성 -> document.ready 메소드 실행 -> 각 태그(요소)들이 load -> window.onload() 실행;

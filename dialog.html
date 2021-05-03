@@ -26,13 +26,16 @@
 
 <div class="container">
     <div class="row" style="height:30px;"></div>
+    <form class="formSubmit" action="http://localhost:8080/insertXpath" method="post">
     <div class="row clickedDetailsList" style="height:400px;"></div>
     <div class="row footer" style="height:30px;">
         <div class="col-md-12" style="text-align:right; padding-right: 10px;">
-            <input class="footer_send_btn" type="submit" value="send">
-            <input class="footer_cancel_btn" type="submit" value="cancel">
+            <input class="footer_send_btn" type="button" value="send">
+            <input class="footer_cancel_btn" type="button" value="cancel">
+            <input class="footer_reset_btn" type="button" value="reset">
         </div>
     </div>
+    </form>
 </div>
 
 </body>
