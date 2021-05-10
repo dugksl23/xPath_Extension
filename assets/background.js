@@ -25,6 +25,9 @@ function setValueOfTitleAndXpath(xPath, title) {
         clickedDetailBox.setAttribute('class', 'clickedDetailBox');
         clickedDetailBox.setAttribute('id', 'clickedDetailBox' + i);
 
+        let inputTagForExtra = document.createElement('input');
+        inputTagForExtra.setAttribute('class', 'extra');
+
         let inputTagForTitle = document.createElement('input');
         inputTagForTitle.setAttribute('class', 'title');
         inputTagForTitle.value = title;
@@ -40,6 +43,7 @@ function setValueOfTitleAndXpath(xPath, title) {
         cancel_btn.setAttribute('type', 'button');
         cancel_btn.setAttribute('value', 'cancel');
 
+        clickedDetailBox.appendChild(inputTagForExtra);
         clickedDetailBox.appendChild(inputTagForTitle);
         clickedDetailBox.appendChild(inputTagForXpath);
         clickedDetailBox.appendChild(cancel_btn);
