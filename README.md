@@ -70,7 +70,7 @@
 
 ### XPath 취득 기능
 
-![image](https://user-images.githubusercontent.com/68539491/117804409-b6656600-b292-11eb-8e7d-c9aaec2bdf0f.png)****
+![image](https://user-images.githubusercontent.com/68539491/117804870-43a8ba80-b293-11eb-8893-f0980499bb5d.png)
 
 - **등록된 확장프로그램을 실행**
 - **사용 버튼을 클릭 -> 해당 사이트의 모든 Click 이벤트를 제거**
