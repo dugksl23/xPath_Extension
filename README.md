@@ -50,8 +50,6 @@
        
 * **형상관리**
   * GithuB
-  
-
 
 
 ## 4. 주요 기능 요약
@@ -70,72 +68,23 @@
 
 --- 
 
-### 게시판 
- - **게시글 읽기 페이지**
+### XPath 취득 기능
 
-![image](https://user-images.githubusercontent.com/68539491/110901249-624c0d00-8347-11eb-927c-26abfa4cc20a.png)
- 
+![image](https://user-images.githubusercontent.com/68539491/117804409-b6656600-b292-11eb-8e7d-c9aaec2bdf0f.png)****
 
- - **게시글 테이블 페이지**
-
-![image](https://user-images.githubusercontent.com/68539491/110902995-151d6a80-834a-11eb-8fb7-0b0419936f0c.png)
-
----
-
-### 마이페이지 (회원) 
- - **회원가입 페이지**
-
-![image](https://user-images.githubusercontent.com/68539491/110903363-aee51780-834a-11eb-86bf-8ca069198f19.png)
-
- - **회원정보 보기 페이지**
-
-![image](https://user-images.githubusercontent.com/68539491/110903562-fc618480-834a-11eb-9590-7c731e9c644a.png)
-
----
-
-### 채팅
- - **친구 목록 페이지**
-
-![image](https://user-images.githubusercontent.com/68539491/110903690-29ae3280-834b-11eb-9fd5-aecf9ad02ccd.png)
-
-
- - **채팅 목록 페이지**
- 
-![image](https://user-images.githubusercontent.com/68539491/110903708-33379a80-834b-11eb-8608-4d20dc86be08.png)
-
-
- - **1:1 채팅 페이지**
- 
-![image](https://user-images.githubusercontent.com/68539491/110903744-3fbbf300-834b-11eb-9fd6-8ec704b0d15f.png)
+- **등록된 확장프로그램을 실행**
+- **사용 버튼을 클릭 -> 해당 사이트의 모든 Click 이벤트를 제거**
+- **MouseOver 이벤트를 통해, Target Node를 특정하기 위해서 Background Color(Pink)를 추가**
+- **Click을 통해 Target Node의 XPath 취득 및 Target Node의 InnerText 값을 취득**
 
 
 ---
 
-### 화상 회의 
- - **화상 회의 개최**
- 
-![image](https://user-images.githubusercontent.com/68539491/110904064-bce76800-834b-11eb-81cd-9929ed48a724.png)
-![image](https://user-images.githubusercontent.com/68539491/110904137-d983a000-834b-11eb-8688-aa873eb48f4f.png)
-![image](https://user-images.githubusercontent.com/68539491/110904279-1354a680-834c-11eb-8be3-641494766d51.png)
+### XPath List를 DB에 적재
 
+![image](https://user-images.githubusercontent.com/68539491/117804477-c8470900-b292-11eb-98d2-f52431514cca.png)
 
----
+- **취득한 XPath들을 List로 나열**
+- **Send 버튼을 클릭 -> XPath를 적재를 위한 API 호출**
+- **XPath를 MariaDB에 적재**
 
-### 화상 회의 초대 / 참가
- - **화상 회의 초대**
- 
-![image](https://user-images.githubusercontent.com/68539491/110904398-3ed79100-834c-11eb-8801-aee8a5cab171.png)
-
-![image](https://user-images.githubusercontent.com/68539491/110904420-49922600-834c-11eb-8a99-4b3f9306cc15.png) 
-
-  - **화상 회의 참가**
-  
-![image](https://user-images.githubusercontent.com/68539491/110904456-5adb3280-834c-11eb-8992-e6c6bf92bfb9.png)
-
-	
-
-
- 
-
-
- 
