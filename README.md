@@ -5,7 +5,6 @@
 **made by**  Yohan 김요한<br>
 **contact**  010-3905-1285<br>
 **email address**  dugksl23@naver.com<br>
-**hosting addrres**  <http://13.209.87.252>
 
 # 목차
 #### 1. 프로젝트 소개
